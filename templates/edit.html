@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {font:12px/1.4 Verdana,Arial; background:#eee; height:100%; margin:25px 0; padding:0}
+h1 {font:24px Georgia,Verdana; margin:0}
+h2 {font-size:12px; font-weight:normal; font-style:italic; margin:0 0 20px}
+p {margin-top:0}
+
+
+#testdiv {width:600px; margin:0 auto; border:1px solid #ccc; padding:20px 25px; background:#fff}
+
+#tinybox {position:absolute; display:none; padding:10px; background:#fff no-repeat 50% 50%; border:10px solid #e3e3e3; z-index:2000}
+#tinymask {position:absolute; display:none; top:0; left:0; height:100%; width:100%; background:#000; z-index:1500}
+#tinycontent {background:#fff}
+
+.button {font:14px Georgia,Verdana; margin-bottom:10px; padding:8px 10px 9px; border:1px solid #ccc; background:#eee; cursor:pointer}
+.button:hover {border:1px solid #bbb; background:#e3e3e3}
+    </style>
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{employee.id}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">student Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="cname" id="id_cname" required maxlength="100" value="{{ employee.cname }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Email:</label>
+    <div class="col-sm-4">
+        <input type="email" name="email" id="id_email" required maxlength="254" value="{{ employee.email }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Contact:</label>
+    <div class="col-sm-4">
+        <input type="text" name="contact" id="id_contact" required maxlength="15" value="{{ employee.contact }}" />
+    </div>
+  </div>
+   <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Course:</label>
+    <div class="col-sm-4">
+        <input type="text" name="course" id="id_course" required maxlength="100" value="{{ employee.course }}"/>
+    </div>
+  </div>
+   <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Branch:</label>
+    <div class="col-sm-4">
+        <input type="text" name="branch" id="id_branch" required maxlength="100" value="{{ employee.branch }}"/>
+    </div>
+  </div>
+   <div class="form-group row">
+    <label class="col-sm-2 col-form-label">College:</label>
+    <div class="col-sm-4">
+        <input type="text" name="clg_name" id="id_clg_name" required maxlength="100" value="{{ employee.clg_name }}"/>
+    </div>
+  </div>
+   <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Transport:</label>
+    <div class="col-sm-4">
+        <input type="text" name="transport" id="id_transport" required maxlength="100" value="{{ employee.transport }}"/>
+    </div>
+  </div>
+   <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Address:</label>
+    <div class="col-sm-4">
+        <input type="text" name="address" id="id_address" required maxlength="100" value="{{ employee.address }}"/>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>
